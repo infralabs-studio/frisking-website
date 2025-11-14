@@ -1,11 +1,13 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
+  /* Your light mode variables and any custom variables */
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
+  
+  /* Variables formerly in the @theme block */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -14,13 +16,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    /* Your dark mode variables */
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+
+
+

@@ -1,0 +1,44 @@
+/* app/components/Hero.module.css */
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-image: url('/pour.png'); /* your dark background image in public/ */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* darker overlay for better contrast */
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.title {
+  color: white;
+  font-size: 4rem; /* text-7xl equivalent */
+  font-weight: 800; /* extrabold */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* make text stand out */
+}
+
+.subtitle {
+  color: white;
+  font-size: 1.5rem; /* text-2xl equivalent */
+  margin-top: 1.5rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+
