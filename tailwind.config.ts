@@ -15,9 +15,9 @@ const config: Config = {
         offwhite: "#FAF9F6",
       },
       fontFamily: {
-        body: ["var(--font-geist-sans)"],
-        heading: ["var(--font-playfair)"],
-        mono: ["var(--font-geist-mono)"],
+        body: ["var(--font-geist-sans)", "sans-serif"],
+        heading: ["var(--font-playfair)", "serif"],
+        mono: ["var(--font-geist-mono)", "monospace"],
       },
       boxShadow: {
         luxury: "0 10px 30px rgba(0, 0, 0, 0.12)",
@@ -25,6 +25,7 @@ const config: Config = {
       },
     },
   },
+  plugins: [],
 };
 
 export default config;
