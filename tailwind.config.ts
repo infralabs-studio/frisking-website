@@ -1,31 +1,30 @@
+// tailwind.config.ts
 import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./public/**/*.{svg,png,jpg,jpeg}",
   ],
   theme: {
     extend: {
       colors: {
-        maroon: "#6A1B1A",
-        gold: "#C5A572",
+        maroon: "#800020",
+        gold: "#D4AF37",
         charcoal: "#3A3A3A",
-        offwhite: "#F8F8F8",
+        offwhite: "#FAF9F6",
       },
       fontFamily: {
-        sans: ['var(--font-geist-sans)'],
-        mono: ['var(--font-geist-mono)'],
-        heading: ['var(--font-geist-sans)', 'sans-serif'],
-        body: ['var(--font-geist-sans)', 'sans-serif'],
+        body: ["var(--font-geist-sans)"],
+        heading: ["var(--font-playfair)"],
+        mono: ["var(--font-geist-mono)"],
       },
       boxShadow: {
-        luxury: "0 4px 20px rgba(0, 0, 0, 0.1)",
+        luxury: "0 10px 30px rgba(0, 0, 0, 0.12)",
+        card: "0 8px 25px rgba(0, 0, 0, 0.08)",
       },
     },
   },
-  plugins: [],
 };
 
 export default config;
