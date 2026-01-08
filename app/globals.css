@@ -1,115 +1,53 @@
-/* app/globals.css */
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
 
-/* Tailwind v4 Import */
-@import "tailwindcss";
-
-/* Font Imports */
-@import "@fontsource/playfair-display/400.css";
-@import "@fontsource/playfair-display/700.css";
-@import "@fontsource/geist-sans";
-@import "@fontsource/geist-mono";
-
-/* Custom CSS (Native – No @apply!) */
-
-/* Font Variables */
+/* =========================
+   CSS Variables (Design System)
+   ========================= */
 :root {
-  --font-geist-sans: "Geist Sans", ui-sans-serif, system-ui;
-  --font-geist-mono: "Geist Mono", ui-monospace;
-  --font-playfair: "Playfair Display", Georgia, serif;
+  --maroon: #6A1B1A;
+  --gold: #C5A572;
+  --charcoal: #3A3A3A;
+  --offwhite: #F8F8F8;
 }
 
-/* Base Styles */
+/* =========================
+   Base Styles
+   ========================= */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-geist-sans);
-  background-color: theme('colors.offwhite');
-  color: theme('colors.charcoal');
-  min-height: 100vh;
-  line-height: 1.7;
-  font-weight: 400;
+  background-color: var(--offwhite);
+  color: var(--charcoal);
 }
 
-/* Headings */
-.font-heading {
-  font-family: var(--font-playfair);
-  font-weight: 700;
+/* =========================
+   Typography
+   ========================= */
+h1, h2, h3, h4 {
+  font-weight: 600;
   letter-spacing: 0.02em;
 }
 
-/* Luxury Button */
+p {
+  opacity: 0.9;
+}
+
+/* =========================
+   Luxury Button Utility
+   ========================= */
 .btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 2rem;
-  background-color: theme('colors.maroon');
-  color: theme('colors.offwhite');
+  background-color: var(--maroon);
+  color: var(--offwhite);
   border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
   font-weight: 500;
-  letter-spacing: 0.05em;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
+  transition: all 300ms ease;
 }
 
-.btn-primary:hover,
-.btn-primary:focus-visible {
-  background-color: theme('colors.gold');
-  color: theme('colors.charcoal');
-  outline: none;
-  box-shadow: 0 0 0 2px theme('colors.gold')/0.5;
-  transform: translateY(-1px);
-}
-
-/* Luxury Shadows */
-.shadow-luxury {
-  box-shadow: theme('boxShadow.luxury');
-}
-
-.shadow-card {
-  box-shadow: theme('boxShadow.card');
-}
-
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  background-color: theme('colors.offwhite')/0.95;
-  backdrop-filter: blur(10px);
-  transition: box-shadow 0.3s ease;
-}
-
-.navbar.scrolled {
-  box-shadow: theme('boxShadow.luxury');
-}
-
-/* Footer */
-.footer {
-  background-color: theme('colors.maroon');
-  color: theme('colors.offwhite');
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-/* Interactive */
-a {
-  transition: color 0.3s ease;
-}
-
-::selection {
-  background-color: theme('colors.gold')/0.2;
-  color: theme('colors.maroon');
-}
-
-:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px theme('colors.gold')/0.5;
+.btn-primary:hover {
+  background-color: var(--gold);
+  color: var(--charcoal);
 }
