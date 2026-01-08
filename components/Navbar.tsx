@@ -12,7 +12,6 @@ export function Navbar() {
 
   useEffect(() => {
     const onScroll = () => {
-      // Trigger effect slightly earlier for smoother feel
       setScrolled(window.scrollY > 20);
     };
 
@@ -26,7 +25,7 @@ export function Navbar() {
         "fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out border-b border-transparent",
         scrolled
           ? "bg-offwhite/80 backdrop-blur-md shadow-luxury py-3 border-gray-200/20" // Glass effect when scrolled
-          : "bg-transparent py-6" // Taller and clean when at top
+          : "bg-transparent py-6" 
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 md:px-12">
@@ -59,7 +58,7 @@ export function Navbar() {
             scrolled ? "text-charcoal" : "text-offwhite drop-shadow-sm"
           )}
         >
-          {["Home", "Services", "About", "Contact"].map((item) => (
+          {["Home", "About", "Contact"].map((item) => (
             <Link
               key={item}
               href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
