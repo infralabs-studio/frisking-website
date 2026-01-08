@@ -1,69 +1,115 @@
-/* Import Tailwind's new layers (v4 syntax) */
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
+/* app/globals.css */
 
-/* -------------------------------------
-   Custom Global Styles for Frisking
-------------------------------------- */
+/* Tailwind v4 Import */
+@import "tailwindcss";
 
-/* Theme variables */
+/* Font Imports */
+@import "@fontsource/playfair-display/400.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/geist-sans";
+@import "@fontsource/geist-mono";
+
+/* Custom CSS (Native – No @apply!) */
+
+/* Font Variables */
 :root {
-  --color-charcoal: #3A3A3A;
-  --color-maroon: #6A1B1A;
-  --color-gold: #C5A572;
-  --color-offwhite: #F8F8F8;
+  --font-geist-sans: "Geist Sans", ui-sans-serif, system-ui;
+  --font-geist-mono: "Geist Mono", ui-monospace;
+  --font-playfair: "Playfair Display", Georgia, serif;
 }
 
-/* Base styles */
-html,
-body {
+/* Base Styles */
+html {
   scroll-behavior: smooth;
-  background-color: var(--color-offwhite);
-  color: var(--color-charcoal);
-  font-family: var(--font-geist-sans), sans-serif;
+}
+
+body {
+  font-family: var(--font-geist-sans);
+  background-color: theme('colors.offwhite');
+  color: theme('colors.charcoal');
+  min-height: 100vh;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 /* Headings */
-h1, h2, h3, h4 {
-  color: var(--color-charcoal);
+.font-heading {
+  font-family: var(--font-playfair);
   font-weight: 700;
   letter-spacing: 0.02em;
 }
 
-/* Paragraphs */
-p {
-  color: color-mix(in srgb, var(--color-charcoal) 90%, transparent);
-  line-height: 1.7;
-}
-
-/* Luxury Button Style */
+/* Luxury Button */
 .btn-primary {
-  background-color: var(--color-maroon);
-  color: var(--color-offwhite);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  background-color: theme('colors.maroon');
+  color: theme('colors.offwhite');
   border-radius: 9999px;
-  padding: 0.75rem 1.5rem;
   font-weight: 500;
   letter-spacing: 0.05em;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
-.btn-primary:hover {
-  background-color: var(--color-gold);
-  color: var(--color-charcoal);
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: theme('colors.gold');
+  color: theme('colors.charcoal');
+  outline: none;
+  box-shadow: 0 0 0 2px theme('colors.gold')/0.5;
+  transform: translateY(-1px);
 }
 
-/* Navbar shadow refinement */
+/* Luxury Shadows */
 .shadow-luxury {
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: theme('boxShadow.luxury');
 }
 
-/* Footer styling */
-footer {
-  background-color: var(--color-maroon);
-  color: var(--color-offwhite);
+.shadow-card {
+  box-shadow: theme('boxShadow.card');
 }
 
-/* Smooth hover links */
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: theme('colors.offwhite')/0.95;
+  backdrop-filter: blur(10px);
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: theme('boxShadow.luxury');
+}
+
+/* Footer */
+.footer {
+  background-color: theme('colors.maroon');
+  color: theme('colors.offwhite');
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Interactive */
 a {
   transition: color 0.3s ease;
+}
+
+::selection {
+  background-color: theme('colors.gold')/0.2;
+  color: theme('colors.maroon');
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px theme('colors.gold')/0.5;
 }

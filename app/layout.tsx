@@ -1,11 +1,11 @@
+// app/layout.tsx
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { GeistSans, GeistMono } from "geist/font";
 
 export const metadata = {
   title: "Frisking | Purveyors of Fine Wine and Liquors",
-  description: "Frisking is a luxury distributor of fine wines and liquors.",
+  description: "Luxury wine and liquor distributor.",
 };
 
 export default function RootLayout({
@@ -15,11 +15,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${GeistSans.variable} ${GeistMono.variable} font-body bg-offwhite text-charcoal scroll-smooth antialiased`}
-      >
+      <head>
+        <link rel="preload" href="/images/hero-bg.png" as="image" />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
+      <body className="font-body antialiased">
         <Navbar />
-        <main className="pt-20">{children}</main>
+        <main className="pt-20 md:pt-24">{children}</main>
         <Footer />
       </body>
     </html>
