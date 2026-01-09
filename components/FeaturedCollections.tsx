@@ -16,7 +16,7 @@ const collections = [
   },
   {
     id: 2,
-    title: "Premium Spirits",
+    title: "Premium Whiskey",
     subtitle: "Aged Whiskey",
     image: "/images/whiskey.jpg",
     link: "/collections/spirits",
